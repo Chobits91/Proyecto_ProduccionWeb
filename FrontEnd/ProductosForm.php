@@ -47,34 +47,34 @@ $producto = $bProduct->getProducto($id);
                             <div class="card-body">
                                 <div class="form-group">
                                     <label for="exampleInputEmail1">Nombre</label>
-                                    <input type="text" class="form-control" name="nombre" value="<?php echo $user->getNombre() ?>" id="exampleInputEmail1" placeholder="Nombre">
+                                    <input type="text" class="form-control" name="nombre" value="<?php echo $producto->getNombre() ?>" id="exampleInputEmail1" placeholder="Nombre">
                                 </div>
                                 <div class="form-group">
                                     <label for="exampleInputEmail1">Descripción</label>
-                                    <input type="email" class="form-control" name="descripcion" value="<?php echo $user->getMail() ?>" id="exampleInputEmail1" placeholder="Enter email">
+                                    <input type="email" class="form-control" name="descripcion" value="<?php echo $producto->getDescripcion() ?>" id="exampleInputEmail1" placeholder="Descripción">
                                 </div>
                                 <div class="form-group">
                                     <label for="exampleInputEmail1">Precio</label>
-                                    <input type="text" class="form-control" name="precio" value="<?php echo $user->getUsuario() ?>" id="exampleInputEmail1" placeholder="User">
+                                    <input type="text" class="form-control" name="precio" value="<?php echo $producto->getPrecio() ?>" id="exampleInputEmail1" placeholder="Precio">
                                 </div>
                                 <div class="form-group">
-                                    <label for="exampleInputPassword1">Stock</label>
-                                    <input type="password" class="form-control" name="stock" id="exampleInputPassword1" placeholder="Password">
+                                    <label for="exampleInputEmail1">Stock</label>
+                                    <input type="text" class="form-control" name="stock" value="<?php echo $producto->getStock() ?>"id="exampleInputEmail1" placeholder="Stock">
                                 </div>
                                 <div class="form-group">
-                                    <label for="exampleInputPassword1">Destacado</label>
-                                    <input type="password" class="form-control" name="destacado" id="exampleInputPassword1" placeholder="Password">
+                                    <label for="exampleInputEmail1">Destacado</label>
+                                    <input type="text" class="form-control" name="destacado" value="<?php echo $producto->getDestacado() ?>" id="exampleInputEmail1" placeholder="Destacado">
                                 </div>
                                 <div class="form-group">
-                                    <label for="exampleInputPassword1">Calificación</label>
-                                    <input type="password" class="form-control" name="calificación" id="exampleInputPassword1" placeholder="Password">
+                                    <label for="exampleInputEmail1">Calificación</label>
+                                    <input type="text" class="form-control" name="calificación" value="<?php echo $producto->getCalificacion() ?>" id="exampleInputEmail1" placeholder="Calificación">
                                 </div>
                                 <div class="form-group">
-                                    <label for="exampleInputPassword1">Fecha de Lanzamiento</label>
-                                    <input type="password" class="form-control" name="fechadelanzamiento" id="exampleInputPassword1" placeholder="Password">
+                                    <label for="exampleInputEmail1">Fecha de Lanzamiento</label>
+                                    <input type="text" class="form-control" name="fechadelanzamiento" value="<?php echo $producto->getFechaLanzamiento() ?>" id="exampleInputEmail1" placeholder="Fecha de Lanzamiento">
                                 </div>
                                 <div class="form-group">
-                                    <label for="exampleInputPassword1">Categoría</label>
+                                    <label for="exampleInputEmail1">Categoría</label>
                                     <select name="categoria[]" multiple=multiple class="custom-select form-control-border" id="exampleSelectBorder">
                                         <?php foreach ($bCategoria->getCategoria() as $categoria) { ?>
                                             <option value="<?php echo $categoria->getIDCategoria() ?>" <?php echo $producto->poseeCategoria($categoria->getIDCategoria()) ? 'selected' : '' ?>><?php echo $categoria->getNombre() ?></option>-->
@@ -82,18 +82,18 @@ $producto = $bProduct->getProducto($id);
                                     </select>
                                 </div>
                                 <div class="form-group">
-                                    <label for="exampleInputPassword1">Plataforma</label>
-                                    <select name="perfiles[]" multiple=multiple class="custom-select form-control-border" id="exampleSelectBorder">
-                                        <?php foreach ($bPerfil->getPerfiles() as $perfil) { ?>
-                                            <option value="<?php echo $perfil->getIDPerfil() ?>" <?php echo $user->poseePerfil($perfil->getIDPerfil()) ? 'selected' : '' ?>><?php echo $perfil->getNombre() ?></option>-->
+                                    <label for="exampleInputEmail1">Plataforma</label>
+                                    <select name="plataforma[]" multiple=multiple class="custom-select form-control-border" id="exampleSelectBorder">
+                                        <?php foreach ($bPlataforma->getPlataforma() as $plataforma) { ?>
+                                            <option value="<?php echo $plataforma->getIDPlataforma() ?>" <?php echo $producto->poseePlataforma($plataforma->getIDPlataforma()) ? 'selected' : '' ?>><?php echo $plataforma->getNombre() ?></option>-->
                                         <?php } ?>
                                     </select>
                                 </div>
                                 <div class="form-group">
                                     <label for="exampleInputPassword1">Desarrollador</label>
-                                    <select name="perfiles[]" multiple=multiple class="custom-select form-control-border" id="exampleSelectBorder">
-                                        <?php foreach ($bPerfil->getPerfiles() as $perfil) { ?>
-                                            <option value="<?php echo $perfil->getIDPerfil() ?>" <?php echo $user->poseePerfil($perfil->getIDPerfil()) ? 'selected' : '' ?>><?php echo $perfil->getNombre() ?></option>-->
+                                    <select name="desarrollador[]" multiple=multiple class="custom-select form-control-border" id="exampleSelectBorder">
+                                        <?php foreach ($bDesarrollador->getDesarrollador() as $desarrollador) { ?>
+                                            <option value="<?php echo $desarrollador->getIDDesarrollador() ?>" <?php echo $producto->poseeDesarrollador($desarrollador->getIDDesarrollador()) ? 'selected' : '' ?>><?php echo $desarrollador->getNombre() ?></option>-->
                                         <?php } ?>
                                     </select>
                                 </div>

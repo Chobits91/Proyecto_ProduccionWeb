@@ -63,7 +63,7 @@ $user = $bUser->getUser($id);
                     <input type="password" class="form-control" name="pass" id="exampleInputPassword1" placeholder="Password">
                   </div>
                   <div class="form-group">
-                    <label for="exampleInputPassword1">Perfiles</label>
+                    <label for="exampleInputEmail1">Perfiles</label>
                     <select name="perfiles[]" multiple=multiple class="custom-select form-control-border" id="exampleSelectBorder">
                       <?php foreach($bPerfil->getPerfiles() as $perfil){ ?>
                          <option value="<?php echo $perfil->getIDPerfil()?>" <?php echo $user->poseePerfil($perfil->getIDPerfil())?'selected':'' ?>><?php echo $perfil->getNombre()?></option>-->

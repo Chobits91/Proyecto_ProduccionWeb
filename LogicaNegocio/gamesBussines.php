@@ -9,7 +9,7 @@ class gamesBussines {
 
     function __construct($con) {
 
-        $this->productosDao = new ProductosDAO($con);
+        $this->ProductosDao = new ProductosDAO($con);
     }
 
     public function getProducto($id_producto) {

@@ -17,7 +17,7 @@
 
         public function getOne($data, $by = 'id_usuario') {
 
-            $sql = "SELECT id_usuario,nombre,usuario,pass,mail FROM $this->table WHERE $by = '$data'";
+            $sql = "SELECT id_usuario,usuario,pass,mail FROM $this->table WHERE $by = '$data'";
             $resultado = $this->con->query($sql,PDO::FETCH_CLASS,'UsuarioEntity')->fetch();
             if($resultado){
                 $resultado->setPerfiles($this->perfilDAO->getAllByUser($resultado->getIDUsuario()));
@@ -31,7 +31,7 @@
 
         public function getAll($where = array()){
 
-            $sql = "SELECT id_usuario,nombre,usuario,pass,mail FROM $this->table"; 
+            $sql = "SELECT id_usuario,usuario,pass,mail FROM $this->table"; 
             $resultado = $this->con->query($sql,PDO::FETCH_CLASS,'UsuarioEntity')->fetchAll();
             foreach($resultado as $index=>$user){
                 $resultado[$index]->setPerfiles($this->perfilDAO->getAllByUser($user->getIDUsuario()));

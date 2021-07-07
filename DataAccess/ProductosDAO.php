@@ -6,13 +6,14 @@ require_once('PlataformaDAO.php');
 require_once('CategoriaDAO.php');
 require_once('../Modelos/ProductosEntity.php');
 
-class ProductosDAO extends DAO {
+class ProductosDAO extends DAO
+{
 
     protected $DesarrolladorDao;
     protected $PlataformaDao;
     protected $CategoriaDao;
 
-    function __construct($con) 
+    function __construct($con)
     {
         parent::__construct($con);
         $this->table = 'productos';
@@ -21,86 +22,85 @@ class ProductosDAO extends DAO {
         $this->CategoriaDao = new CategoriaDAO($con);
     }
 
-    public function getOne($id) {
-        
+    public function getOne($id)
+    {
+
         $sql = "SELECT id_producto, id_desarrollador, id_plataforma, id_categoria, nombre, descripcion, precio, stock, destacado, calificacion, fechadelanzamiento FROM $this->table WHERE id_producto = $id";
-        $resultado = $this->con->query($sql,PDO::FETCH_CLASS,'ProductosEntity')->fetch();
-
-        $resultado->setIDDesarrollador($this->DesarrolladorDao->getOne($resultado->getIDDesarrollador())); 
-        $resultado->setIDPlataforma($this->PlataformaDao->getOne($resultado->getIDPlataforma())); 
-        $resultado->setIDCategoria($this->CategoriaDao->getOne($resultado->getIDCategoria())); 
-
+        $resultado = $this->con->query($sql, PDO::FETCH_CLASS, 'ProductosEntity')->fetch();
+        // if ($resultado) {
+        //     $resultado->setIDDesarrollador($this->DesarrolladorDao->getOne($resultado->getIDDesarrollador()));
+        //     $resultado->setIDPlataforma($this->PlataformaDao->getOne($resultado->getIDPlataforma()));
+        //     $resultado->setIDCategoria($this->CategoriaDao->getOne($resultado->getIDCategoria()));
+        // } else {
+        //     $resultado = new ProductosEntity();
+        // }
         return $resultado;
-
     }
 
-    public function getAll($where = array()) {
+    public function getAll($where = array())
+    {
 
         $sql = "SELECT id_producto, id_desarrollador, id_plataforma, id_categoria, nombre, descripcion, precio, stock, destacado, calificacion, fechadelanzamiento FROM $this->table where 1=1";
-        
-        if(!empty($where['plataformas'])){
-            $sql.= ' and id_plataforma='.$where['plataformas'];
-        }
-        if(!empty($where['generos'])){
-            $sql.= ' and id_categoria='.$where['generos'];
-        }
-        
-        $resultado = $this->con->query($sql,PDO::FETCH_CLASS,'ProductosEntity')->fetchAll();
 
-        foreach($resultado as $index=>$res){
+        if (!empty($where['plataformas'])) {
+            $sql .= ' and id_plataforma=' . $where['plataformas'];
+        }
+        if (!empty($where['generos'])) {
+            $sql .= ' and id_categoria=' . $where['generos'];
+        }
+
+        $resultado = $this->con->query($sql, PDO::FETCH_CLASS, 'ProductosEntity')->fetchAll();
+
+        foreach ($resultado as $index => $res) {
             $resultado[$index]->setIDDesarrollador($this->DesarrolladorDao->getOne($res->getIDDesarrollador()));
             $resultado[$index]->setIDPlataforma($this->PlataformaDao->getOne($res->getIDPlataforma()));
             $resultado[$index]->setIDCategoria($this->CategoriaDao->getOne($res->getIDCategoria()));
         }
-        
-    return $resultado;
 
+        return $resultado;
     }
-//Agregar producto
-    public function save($datos = array()) 
-        {   
-            $categoria = $datos['perfiles'];
-            unset($datos['perfiles']);
+    //Agregar producto
+    public function save($datos = array())
+    {
+        $categoria = $datos['perfiles'];
+        unset($datos['perfiles']);
 
-            $save = parent::save($datos); 
-           
-            $id = $this->con->lastInsertId();
+        $save = parent::save($datos);
 
-            $sql = '';
-            foreach($perfiles as $perfil) 
-            {
-                $sql .= 'INSERT INTO usuario_perfil VALUES('.$id.','.$perfil.');';
-            }
+        $id = $this->con->lastInsertId();
 
-            $this->con->exec($sql);
-            
-            return $save;
-
+        $sql = '';
+        foreach ($perfiles as $perfil) {
+            $sql .= 'INSERT INTO usuario_perfil VALUES(' . $id . ',' . $perfil . ');';
         }
 
-//Modificar producto
-        public function modify($id, $datos = array()) 
-        {
-            $perfiles = $datos['perfiles'];
-            unset($datos['perfiles']);
-            $modify = parent::modify($id, $datos);
-        
-            $sql = 'DELETE FROM usuario_perfil WHERE id_usuario = '.$id.';';
-            foreach($perfiles as $perfil) 
-            {
-                $sql .= 'INSERT INTO usuario_perfil VALUES('.$id.','.$perfil.');';
-            }
+        $this->con->exec($sql);
 
-            $this->con->exec($sql);
+        return $save;
+    }
 
-            return $modify;
-        }
-//Eliminar producto
-        public function delete($id){
-        
-            $sql = 'DELETE FROM usuario_perfil WHERE id_usuario = '.$id.';';
-            $this->con->exec($sql);
-            return parent::delete($id);
+    //Modificar producto
+    public function modify($id, $datos = array())
+    {
+        $perfiles = $datos['perfiles'];
+        unset($datos['perfiles']);
+        $modify = parent::modify($id, $datos);
+
+        $sql = 'DELETE FROM usuario_perfil WHERE id_usuario = ' . $id . ';';
+        foreach ($perfiles as $perfil) {
+            $sql .= 'INSERT INTO usuario_perfil VALUES(' . $id . ',' . $perfil . ');';
         }
 
+        $this->con->exec($sql);
+
+        return $modify;
+    }
+    //Eliminar producto
+    public function delete($id)
+    {
+
+        $sql = 'DELETE FROM usuario_perfil WHERE id_usuario = ' . $id . ';';
+        $this->con->exec($sql);
+        return parent::delete($id);
+    }
 }

@@ -8,6 +8,7 @@ class ProductosEntity extends BaseEntity
     protected $id_desarrollador;
     protected $id_plataforma;
     protected $id_categoria;
+    protected $nombre;
     protected $descripcion;
     protected $precio;
     protected $stock;
@@ -45,6 +46,12 @@ class ProductosEntity extends BaseEntity
 
         return $this->id_categoria;
 
+    }
+
+    public function getNombre() {
+    
+        return $this->nombre;
+    
     }
 
     public function getDescripcion() {
@@ -108,7 +115,11 @@ class ProductosEntity extends BaseEntity
         $this->id_categoria = $id_categoria;
 
     }
-
+    public function setNombre($nombre) {
+    
+        $this->nombre = $nombre;
+    
+    }
     public function setDescripcion($descripcion) {
 
         $this->descripcion = $descripcion;
@@ -145,5 +156,4 @@ class ProductosEntity extends BaseEntity
 
     }
 
-} 
- ?>
+}
