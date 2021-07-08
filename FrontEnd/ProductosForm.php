@@ -10,7 +10,6 @@ if (isset($_POST['productSubmit'])) {
     } else {
         $bProduct->saveProducto($_POST);
     }
-
 }
 
 $id = 0;
@@ -46,12 +45,12 @@ $producto = $bProduct->getProducto($id);
                         <form action="" method="post">
                             <div class="card-body">
                                 <div class="form-group">
-                                    <label for="exampleInputEmail1">Nombre</label>
-                                    <input type="text" class="form-control" name="nombre" value="<?php echo $producto->getNombre() ?>" id="exampleInputEmail1" placeholder="Nombre">
+                                    <label for="exampleFormControlTextarea1">Nombre</label>
+                                    <input type="text" class="form-control" name="nombre" value="<?php echo $producto->getNombre() ?>" id="exampleFormControlTextarea1" placeholder="Nombre">
                                 </div>
                                 <div class="form-group">
-                                    <label for="exampleInputEmail1">Descripción</label>
-                                    <input type="email" class="form-control" name="descripcion" value="<?php echo $producto->getDescripcion() ?>" id="exampleInputEmail1" placeholder="Descripción">
+                                    <label for="exampleFormControlTextarea1">Descripción</label>
+                                    <input type="text" class="form-control" name="descripcion" value="<?php echo $producto->getDescripcion() ?>" id="exampleFormControlTextarea1" placeholder="Descripción">
                                 </div>
                                 <div class="form-group">
                                     <label for="exampleInputEmail1">Precio</label>
@@ -59,7 +58,7 @@ $producto = $bProduct->getProducto($id);
                                 </div>
                                 <div class="form-group">
                                     <label for="exampleInputEmail1">Stock</label>
-                                    <input type="text" class="form-control" name="stock" value="<?php echo $producto->getStock() ?>"id="exampleInputEmail1" placeholder="Stock">
+                                    <input type="text" class="form-control" name="stock" value="<?php echo $producto->getStock() ?>" id="exampleInputEmail1" placeholder="Stock">
                                 </div>
                                 <div class="form-group">
                                     <label for="exampleInputEmail1">Destacado</label>
@@ -73,10 +72,14 @@ $producto = $bProduct->getProducto($id);
                                     <label for="exampleInputEmail1">Fecha de Lanzamiento</label>
                                     <input type="text" class="form-control" name="fechadelanzamiento" value="<?php echo $producto->getFechaLanzamiento() ?>" id="exampleInputEmail1" placeholder="Fecha de Lanzamiento">
                                 </div>
+
+
+
+                                <!--
                                 <div class="form-group">
                                     <label for="exampleInputEmail1">Categoría</label>
                                     <select name="categoria[]" multiple=multiple class="custom-select form-control-border" id="exampleSelectBorder">
-                                        <?php foreach ($bCategoria->getCategoria() as $categoria) { ?>
+                                        <?php /*foreach ($bCategoria->getCategoria() as $categoria) { ?>
                                             <option value="<?php echo $categoria->getIDCategoria() ?>" <?php echo $producto->poseeCategoria($categoria->getIDCategoria()) ? 'selected' : '' ?>><?php echo $categoria->getNombre() ?></option>-->
                                         <?php } ?>
                                     </select>
@@ -94,9 +97,11 @@ $producto = $bProduct->getProducto($id);
                                     <select name="desarrollador[]" multiple=multiple class="custom-select form-control-border" id="exampleSelectBorder">
                                         <?php foreach ($bDesarrollador->getDesarrollador() as $desarrollador) { ?>
                                             <option value="<?php echo $desarrollador->getIDDesarrollador() ?>" <?php echo $producto->poseeDesarrollador($desarrollador->getIDDesarrollador()) ? 'selected' : '' ?>><?php echo $desarrollador->getNombre() ?></option>-->
-                                        <?php } ?>
+                                        <?php } */ ?>
                                     </select>
                                 </div>
+                                -->
+
 
                             </div>
                             <!-- /.card-body -->

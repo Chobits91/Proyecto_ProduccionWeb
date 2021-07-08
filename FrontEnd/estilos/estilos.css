@@ -3,7 +3,7 @@ a {
     font-size: 1em;
 }
 
-.card h2 a{
+.card h2 a {
     color: #388F53;
     font-size: 0.80em;
 }
@@ -12,7 +12,7 @@ a:hover {
     color: #388F53;
 }
 
-#iniciogrillaimg{
+#iniciogrillaimg {
     margin-top: 30px;
     margin-bottom: 10px;
 }
@@ -39,7 +39,7 @@ a:hover {
     border-color: #388F53;
     text-align: justify;
     border-style: double;
-    height: 600px;
+    height: auto;
     width: auto;
 }
 
@@ -74,7 +74,7 @@ a:hover {
     font-size: 0.80em;
 }
 
-.card .visualcard{
+.card .visualcard {
     position: absolute;
     bottom: 15px;
     padding-right: 5px;
@@ -102,8 +102,6 @@ a:hover {
     text-align: center;
     margin: 10px;
 }
-
-
 
 /* MINI CARD
 */
@@ -153,7 +151,7 @@ a:hover {
     font-size: 0.70em;
 }
 
-.cardmini .visualcardmini{
+.cardmini .visualcardmini {
     position: absolute;
     bottom: 5px;
     padding-right: 5px;
@@ -234,7 +232,8 @@ listadoplataforma listadogenero #cuerpodetalle {
     font-style: italic;
     color: darkgray;
 }
-.titulodetalle{
+
+.titulodetalle {
     margin-top: 50px;
     margin-bottom: 25px;
     text-align: center;
@@ -246,7 +245,7 @@ listadoplataforma listadogenero #cuerpodetalle {
     padding-bottom: 5px;
 }
 
-#carouseldetalle{
+#carouseldetalle {
     padding: 20px;
     box-shadow: 2px 2px 5px 2px #DFDFDF;
     text-align: justify;
@@ -254,7 +253,7 @@ listadoplataforma listadogenero #cuerpodetalle {
     color: #000000;
 }
 
-#cuerpodetalle h2{
+#cuerpodetalle h2 {
     margin-top: 50px;
     margin-bottom: 25px;
     text-align: center;
@@ -278,49 +277,51 @@ body {
 }
 
 /* estrellas */
+
 #form {
-  width: 250px;
-  margin: 0 auto;
-  height: 50px;
+    width: 250px;
+    margin: 0 auto;
+    height: 50px;
 }
 
 #form p {
-  text-align: center;
+    text-align: center;
 }
 
 #form label {
-  font-size: 20px;
+    font-size: 20px;
 }
 
 input[type="radio"] {
-  display: none;
+    display: none;
 }
 
 label {
-  color: grey;
+    color: grey;
 }
 
 .clasificacion {
-  direction: rtl;
-  unicode-bidi: bidi-override;
-  font-size: 2em;
+    direction: rtl;
+    unicode-bidi: bidi-override;
+    font-size: 2em;
 }
 
 #estrella {
-   font-size: 3em; 
+    font-size: 3em;
     text-align: center;
     margin: 0px;
 }
 
-label:hover,
-label:hover ~ label {
-  color: orange;
+label:hover, label:hover~label {
+    color: orange;
 }
 
-input[type="radio"]:checked ~ label {
-  color: orange;
+input[type="radio"]:checked~label {
+    color: orange;
 }
+
 /* fin estrellas */
+
 .contactosections {
     margin: 30px;
     text-align: left;
@@ -347,7 +348,9 @@ input[type="radio"]:checked ~ label {
 #contactoiconosdiv {
     text-align: center;
 }
+
 /*header*/
+
 .navbar {
     background-color: rgb(224, 220, 220);
     box-shadow: 2px 2px 2px #8a8a8a;
@@ -385,26 +388,27 @@ a {
     background-image: url(../imagenes/iconos/iconohamburguesacierre.png);
 }
 
+/*finheader*/
 
-    /*finheader*/
- 
-    /*footer*/
+/*footer*/
 
-.footer-copyright{
+.footer-copyright {
     color: rgb(0, 0, 0);
     margin-top: 50px;
     font-family: 'Lobster', cursive;
     font-size: 1.2em;
     padding-left: 20px;
 }
-.piepagina{
+
+.piepagina {
     color: #388F53;
 }
 
-#footer2{
-    background-color:rgb(224, 220, 220);
+#footer2 {
+    background-color: rgb(224, 220, 220);
 }
-.gs{
+
+.gs {
     color: #388F53;
     margin-top: 20px;
     text-shadow: -2px -1px rgb(59, 59, 59);
@@ -412,13 +416,15 @@ a {
     font-size: 2em;
     padding-left: 20px;
 }
-.desc{
+
+.desc {
     color: rgb(61, 85, 64);
     font-size: 1.4em;
     font-family: 'Lobster', cursive;
     padding-left: 20px;
 }
-.acc{
+
+.acc {
     color: rgb(45, 168, 45);
     font-size: 1.8em;
     margin-top: 30px;
@@ -426,45 +432,51 @@ a {
     font-family: 'Staatliches', cursive;
     padding-left: 20px;
 }
+
 #link {
     color: rgb(61, 85, 64);
     font-family: 'Staatliches', cursive;
     font-size: 1.4em;
     padding-left: 20px;
 }
-#link:hover{
+
+#link:hover {
     color: #388F53;
-    
 }
-#logo{
+
+#logo {
     padding-left: 20px;
 }
+
 /*paginacontacto*/
-.contactoh2{
+
+.contactoh2 {
     font-family: 'Lobster', cursive;
     color: rgb(61, 85, 64);
     font-size: 4em;
     text-shadow: -2px -1px rgb(141, 138, 138);
 }
 
-.contactoh3{
+.contactoh3 {
     font-family: 'Staatliches', cursive;
     color: rgb(61, 85, 64);
-
 }
-.contactosections{
+
+.contactosections {
     font-family: 'Staatliches', cursive;
     color: rgb(61, 85, 64);
     padding-left: 40px;
     padding-top: 30px;
     text-align: center;
-    
 }
-#bd{
+
+#bd {
     background-color: #cecaca;
 }
-#envboton{
-    color: rgb(45, 168, 45);;
+
+#envboton {
+    color: rgb(45, 168, 45);
+    ;
 }
 
 .tituloseccion {
@@ -477,7 +489,7 @@ a {
     margin-bottom: 10px;
 }
 
-.tituloseccioncontacto{
+.tituloseccioncontacto {
     text-align: center;
     color: #388F53;
     font-size: 3.5em;
@@ -487,7 +499,7 @@ a {
     margin-bottom: 10px;
 }
 
-.cardcomentarios{
+.cardcomentarios {
     box-shadow: 4px 4px 4px #DFDFDF;
     margin: 20px 0px;
     background-color: #FFFFFF;
@@ -501,25 +513,25 @@ a {
     width: auto;
 }
 
-.cardcomentarios .clasificacion{
+.cardcomentarios .clasificacion {
     color: orange;
     font-size: 1.25em;
 }
 
-.cardcomentarios .emailcomentarios{
+.cardcomentarios .emailcomentarios {
     color: #388F53;
     font-family: 'Staatliches', cursive;
     font-size: 1.1em;
     text-align: center;
 }
 
-.cardcomentarios .pcomentarios{
+.cardcomentarios .pcomentarios {
     font-style: oblique;
     color: rgb(61, 85, 64);
     font-size: 1.60em;
 }
 
-.comentariosconicono{
+.comentariosconicono {
     text-align: left;
     color: #388F53;
     font-size: 3.5em;
@@ -530,23 +542,25 @@ a {
 }
 
 .button {
-  display: inline-block;
-  padding: 10px 10px;
-  font-size: 15px;
-  cursor: pointer;
-  text-align: center;
-  text-decoration: none;
-  outline: none;
-  color: #fff;
-  background-color: #4CAF50;
-  border: none;
-  border-radius: 10px;
+    display: inline-block;
+    padding: 10px 10px;
+    font-size: 15px;
+    cursor: pointer;
+    text-align: center;
+    text-decoration: none;
+    outline: none;
+    color: #fff;
+    background-color: #4CAF50;
+    border: none;
+    border-radius: 10px;
 }
 
-.button:hover {background-color: #3e8e41}
+.button:hover {
+    background-color: #3e8e41
+}
 
 .button:active {
-  background-color: #3e8e41;
-  box-shadow: 0 2px #666;
-  transform: translateY(4px);
+    background-color: #3e8e41;
+    box-shadow: 0 2px #666;
+    transform: translateY(4px);
 }

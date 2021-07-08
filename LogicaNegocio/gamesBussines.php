@@ -21,7 +21,7 @@ class gamesBussines {
     public function getProductos($datos = array())
     {
 
-        $productos = $this->productosDao->getAll($datos);
+        $productos = $this->ProductosDao->getAll($datos);
         return $productos;
     }
 

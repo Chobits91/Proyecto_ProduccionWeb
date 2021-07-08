@@ -62,26 +62,30 @@ class ProductosDAO extends DAO
     //Agregar producto
     public function save($datos = array())
     {
-        $categoria = $datos['perfiles'];
-        unset($datos['perfiles']);
+        /*
+        $categorias = $datos['categorias'];
+        unset($datos['categorias']);
 
         $save = parent::save($datos);
 
         $id = $this->con->lastInsertId();
-
+        
         $sql = '';
-        foreach ($perfiles as $perfil) {
+        foreach ($categorias as $categoria) {
             $sql .= 'INSERT INTO usuario_perfil VALUES(' . $id . ',' . $perfil . ');';
         }
-
+        */
+        $id = $this->con->lastInsertId();
+        $sql = "INSERT INTO productos VALUES ('id_producto', 'id_desarrollador', 'id_plataforma', 'id_categoria', 'nombre', 'descripcion', 'precio', 'stock', 'destacado', 'calificacion', 'fechadelanzamiento'); WHERE id_producto = $id";
         $this->con->exec($sql);
-
-        return $save;
+        return $save = parent::save($datos);
+        // return $save;
     }
 
     //Modificar producto
     public function modify($id, $datos = array())
     {
+        /*
         $perfiles = $datos['perfiles'];
         unset($datos['perfiles']);
         $modify = parent::modify($id, $datos);
@@ -89,17 +93,16 @@ class ProductosDAO extends DAO
         $sql = 'DELETE FROM usuario_perfil WHERE id_usuario = ' . $id . ';';
         foreach ($perfiles as $perfil) {
             $sql .= 'INSERT INTO usuario_perfil VALUES(' . $id . ',' . $perfil . ');';
-        }
-
+        */
+        $sql = 'UPDATE FROM productos WHERE id_producto = ' . $id . ';';
         $this->con->exec($sql);
-
-        return $modify;
+        return parent::modify($id, $datos);
+        // return $modify;
     }
     //Eliminar producto
     public function delete($id)
     {
-
-        $sql = 'DELETE FROM usuario_perfil WHERE id_usuario = ' . $id . ';';
+        $sql = 'DELETE FROM productos WHERE id_producto = ' . $id . ';';
         $this->con->exec($sql);
         return parent::delete($id);
     }
