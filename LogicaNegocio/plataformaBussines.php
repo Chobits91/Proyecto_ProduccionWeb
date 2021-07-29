@@ -20,7 +20,12 @@
             return $plataforma;
 
         }
+        public function getPlataformas() {
+
+            $product = $this->PlataformaDao->getAll();
+           /* echo '<pre>'; var_dump($productos);echo '</pre>'; */
+            return $product;
+
+        }
 
     }
-
-?>

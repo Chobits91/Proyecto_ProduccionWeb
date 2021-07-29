@@ -18,11 +18,30 @@ class desarrolladorEntity extends BaseEntity
 
     }
 
+    public function getDesarrolladores()
+    {
+        return $this->desarrolladores;
+    }
+
     public function setIDDesarrollador($id_desarrollador) {
 
         $this->id_desarrollador = $id_desarrollador;
 
     }
 
+    public function setDesarrollares($desarrolladores)
+    {
+        $this->desarrolladores = $desarrolladores;
+    }
+
+    public function poseeDesarrollador($id_producto)
+    {
+        foreach ($this->getDesarrolladores() as $desarrollador) {
+            if ($desarrollador->getIDDesarrollador() == $id_producto) {
+                return true;
+            }
+        }
+        return false;
+    }
+
 }
-?>

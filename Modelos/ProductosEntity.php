@@ -2,7 +2,7 @@
 
 require_once('BaseEntity.php');
 
-class ProductosEntity extends BaseEntity 
+class ProductosEntity extends BaseEntity
 {
     protected $id_producto;
     protected $id_desarrollador;
@@ -14,9 +14,10 @@ class ProductosEntity extends BaseEntity
     protected $stock;
     protected $destacado;
     protected $calificacion;
-    protected $fechadelanzamiento; 
-    
-    function __construct() {
+    protected $fechadelanzamiento;
+
+    function __construct()
+    {
 
         parent::__construct();
         // $this->id_desarrollador = array();
@@ -24,136 +25,155 @@ class ProductosEntity extends BaseEntity
         // $this->id_categoria = array();`
     }
 
-    public function getIDProducto() {
+    public function getIDProducto()
+    {
 
         return $this->id_producto;
-
     }
 
-    public function getIDDesarrollador() {
+    public function getIDDesarrollador()
+    {
 
         return $this->id_desarrollador;
-
     }
 
-    public function getIDPlataforma() {
+    public function getIDPlataforma()
+    {
 
         return $this->id_plataforma;
-
     }
 
-    public function getIDCategoria() {
+    public function getIDCategoria()
+    {
 
         return $this->id_categoria;
-
     }
 
-    public function getNombre() {
-    
+    public function getNombre()
+    {
+
         return $this->nombre;
-    
     }
 
-    public function getDescripcion() {
+    public function getDescripcion()
+    {
 
         return $this->descripcion;
-
     }
 
-    public function getPrecio() {
+    public function getPrecio()
+    {
 
         return $this->precio;
-
     }
 
-    public function getStock() {
+    public function getStock()
+    {
 
         return $this->stock;
-
     }
 
-    public function getDestacado() {
+    public function getDestacado()
+    {
 
         return $this->destacado;
-
     }
 
-    public function getCalificacion() {
+    public function getCalificacion()
+    {
 
         return $this->calificacion;
-
     }
 
-    public function getFechaLanzamiento() {
+    public function getFechaLanzamiento()
+    {
 
         return $this->fechadelanzamiento;
-
     }
 
     /*--------------------------------------------------*/
 
-    public function setIDProducto($id_producto) {
+    public function setIDProducto($id_producto)
+    {
 
         $this->id_producto = $id_producto;
-
     }
 
-    public function setIDDesarrollador($id_desarrollador) {
+    public function setIDDesarrollador($id_desarrollador)
+    {
 
         $this->id_desarrollador = $id_desarrollador;
-
     }
 
-    public function setIDPlataforma($id_plataforma) {
+    public function setIDPlataforma($id_plataforma)
+    {
 
         $this->id_plataforma = $id_plataforma;
-
     }
 
-    public function setIDCategoria($id_categoria) {
+    public function setIDCategoria($id_categoria)
+    {
 
         $this->id_categoria = $id_categoria;
+    }
+    public function setNombre($nombre)
+    {
 
-    }
-    public function setNombre($nombre) {
-    
         $this->nombre = $nombre;
-    
     }
-    public function setDescripcion($descripcion) {
+    public function setDescripcion($descripcion)
+    {
 
         $this->descripcion = $descripcion;
-
     }
 
-    public function setPrecio($precio) {
+    public function setPrecio($precio)
+    {
 
         $this->precio = $precio;
-
     }
 
-    public function setStock($stock) {
+    public function setStock($stock)
+    {
 
         $this->stock = $stock;
-
     }
 
-    public function setDestacado($destacado) {
+    public function setDestacado($destacado)
+    {
 
         $this->destacado = $destacado;
-
     }
 
-    public function setCalificacion($calificacion) {
+    public function setCalificacion($calificacion)
+    {
 
         $this->calificacion = $calificacion;
-
     }
 
-    public function getFechaLanzamientoo($fechadelanzamiento) {
+    public function getFechaLanzamientoo($fechadelanzamiento)
+    {
 
         $this->fechadelanzamiento = $fechadelanzamiento;
-
     }
 
+    public function getCategorias()
+    {
+        return $this->categorias;
+    }
+
+    public function setCategorias($categorias)
+    {
+        $this->categorias = $categorias;
+    }
+
+    public function poseeCategoria($id_producto)
+    {
+        foreach ($this->getCategorias() as $categoria) {
+            if ($categoria->getIDCategoria() == $id_producto) {
+                return true;
+            }
+        }
+        return false;
+    }
 }

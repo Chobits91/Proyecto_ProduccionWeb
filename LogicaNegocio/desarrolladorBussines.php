@@ -21,6 +21,12 @@
 
         }
 
-    }
+        public function getDesarrolladores() {
 
-?>
+            $product = $this->DesarrolladorDao->getAll();
+           /* echo '<pre>'; var_dump($productos);echo '</pre>'; */
+            return $product;
+
+        }
+
+    }

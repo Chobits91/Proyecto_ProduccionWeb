@@ -8,12 +8,16 @@ include_once('../LogicaNegocio/plataformaBussines.php');
 include_once('../LogicaNegocio/loginBussines.php');
 include_once('../LogicaNegocio/perfilBussines.php');
 include_once('../LogicaNegocio/userBussines.php');
+include_once('../LogicaNegocio/desarrolladorBussines.php');
 
 include('../Helpers/conecction.php');
 $loginB = new loginBussines($con);
 $bUser = new userBussines($con);
 $bPerfil = new perfilBusiness($con);
 $bProduct = new gamesBussines($con);
+$bCategory = new categoriaBussines($con);
+$bPlataforma = new plataformaBussines($con);
+$bDesarrollador = new desarrolladorBussines($con);
 
 
 if (isset($_POST['login'])) {

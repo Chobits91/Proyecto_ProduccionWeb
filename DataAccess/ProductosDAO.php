@@ -22,18 +22,18 @@ class ProductosDAO extends DAO
         $this->CategoriaDao = new CategoriaDAO($con);
     }
 
-    public function getOne($id)
+    public function getOne($data, $by = 'id_producto')
     {
 
-        $sql = "SELECT id_producto, id_desarrollador, id_plataforma, id_categoria, nombre, descripcion, precio, stock, destacado, calificacion, fechadelanzamiento FROM $this->table WHERE id_producto = $id";
+        $sql = "SELECT id_producto, id_desarrollador, id_plataforma, id_categoria, nombre, descripcion, precio, stock, destacado, calificacion, fechadelanzamiento FROM $this->table WHERE $by = '$data'";
         $resultado = $this->con->query($sql, PDO::FETCH_CLASS, 'ProductosEntity')->fetch();
-        // if ($resultado) {
-        //     $resultado->setIDDesarrollador($this->DesarrolladorDao->getOne($resultado->getIDDesarrollador()));
-        //     $resultado->setIDPlataforma($this->PlataformaDao->getOne($resultado->getIDPlataforma()));
-        //     $resultado->setIDCategoria($this->CategoriaDao->getOne($resultado->getIDCategoria()));
-        // } else {
-        //     $resultado = new ProductosEntity();
-        // }
+        if ($resultado) {
+            $resultado->setIDDesarrollador($this->DesarrolladorDao->getOne($resultado->getIDDesarrollador()));
+            $resultado->setIDPlataforma($this->PlataformaDao->getOne($resultado->getIDPlataforma()));
+            $resultado->setIDCategoria($this->CategoriaDao->getOne($resultado->getIDCategoria()));
+        } else {
+            $resultado = new ProductosEntity();
+        }
         return $resultado;
     }
 

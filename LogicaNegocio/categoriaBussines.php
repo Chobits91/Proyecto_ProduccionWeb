@@ -21,6 +21,12 @@
 
         }
 
-    }
+        public function getCategorias() {
 
-?>
+            $product = $this->CategoriaDao->getAll();
+           /* echo '<pre>'; var_dump($productos);echo '</pre>'; */
+            return $product;
+
+        }
+
+    }

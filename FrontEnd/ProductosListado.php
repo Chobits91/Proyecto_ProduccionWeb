@@ -18,15 +18,18 @@ if (isset($_GET['del'])) {
     <!-- Default box -->
     <div class="card">
       <div class="card-header">
-        <h3 class="card-title">Productos <a href="ProductosForm.php"><i class="fas fa-plus"></i></a></h3>
+        <h3 class="card-title">Productos
+          <!-- <a href="ProductosForm.php"><i class="fas fa-plus"></i>
+          </a> -->
+        </h3>
         <div class="card-tools">
-        <a class="btn btn-success" href="ProductosForm.php">Agregar producto</a>
-          <button type="button" class="btn btn-tool" data-card-widget="collapse" title="Collapse">
+          <a class="btn btn-success" href="ProductosForm.php">Agregar producto</a>
+          <!-- <button type="button" class="btn btn-tool" data-card-widget="collapse" title="Collapse">
             <i class="fas fa-minus"></i>
           </button>
           <button type="button" class="btn btn-tool" data-card-widget="remove" title="Remove">
             <i class="fas fa-times"></i>
-          </button>
+          </button> -->
         </div>
       </div>
       <div class="card-body">
