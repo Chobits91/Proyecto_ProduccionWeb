@@ -10,9 +10,11 @@ if (isset($_POST['userSubmit'])) {
   } else {
     $bUser->saveUser($_POST);
   }
-
+  redirect('UsuariosListado.php');
   //header('UsuariosListado.php');
+  
 }
+
 
 $id = 0;
 if (!empty($_GET['edit'])) {

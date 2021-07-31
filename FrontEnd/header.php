@@ -9,7 +9,7 @@ include_once('../LogicaNegocio/loginBussines.php');
 include_once('../LogicaNegocio/perfilBussines.php');
 include_once('../LogicaNegocio/userBussines.php');
 include_once('../LogicaNegocio/desarrolladorBussines.php');
-
+include_once('funciones.php');
 include('../Helpers/conecction.php');
 $loginB = new loginBussines($con);
 $bUser = new userBussines($con);
