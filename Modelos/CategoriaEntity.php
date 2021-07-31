@@ -24,6 +24,12 @@ class CategoriaEntity extends BaseEntity
         return $this->categorias;
     }
 
+    public function getNombre()
+    {
+
+        return $this->nombre;
+    }
+
     public function setIDCategoria($id_categoria)
     {
 
@@ -33,6 +39,12 @@ class CategoriaEntity extends BaseEntity
     public function setCategorias($categorias)
     {
         $this->categorias = $categorias;
+    }
+
+    public function setNombre($nombre)
+    {
+
+        $this->nombre = $nombre;
     }
 
     public function poseeCategoria($id_producto)
