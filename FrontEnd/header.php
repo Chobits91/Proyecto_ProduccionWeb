@@ -9,7 +9,7 @@ include_once('../LogicaNegocio/loginBussines.php');
 include_once('../LogicaNegocio/perfilBussines.php');
 include_once('../LogicaNegocio/userBussines.php');
 include_once('../LogicaNegocio/desarrolladorBussines.php');
-include_once('funciones.php');
+include_once('../Funciones/funciones.php');
 include('../Helpers/conecction.php');
 $loginB = new loginBussines($con);
 $bUser = new userBussines($con);
@@ -45,6 +45,8 @@ if (isset($_GET['logout'])) {
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
         <link rel="stylesheet" href="lib/bootstrap/css/bootstrap.min.css">
         <link rel="stylesheet" href="estilos/estilos.css">
+        <!-- Font Awesome -->
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.7/css/all.css">
         <!--fuentes-->
         <link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet">
         <link href="https://fonts.googleapis.com/css2?family=Staatliches&display=swap" rel="stylesheet">
@@ -62,8 +64,7 @@ if (isset($_GET['logout'])) {
                 <li class="nav-item"><a class="nav-link" href="index.php"><img src="imagenes/iconos/iconologo30.jpg" alt="Icono logo" width="30" height="30" class="img-fluid rounded-circle float-left">GAMESTORE</a></li>
                 <li class="nav-item"><a class="nav-link" href="listadoproductos.php"><img src="imagenes/iconos/iconocatalogo30.png" alt="Icono catálogo 30" width="30" height="30" class="img-fluid float-left">CATÁLOGO</a></li>
                 <li class="nav-item"><a class="nav-link" href="contacto.php"><img src="imagenes/iconos/iconocontacto30.png" alt="Icono contacto 30" width="30" height="30" class="img-fluid float-left">CONTACTO</a></li>
-                <li class="nav-item"><a class="nav-link" href="login.php"><img src="imagenes/iconos/iconocontacto30.png" alt="Icono contacto 30" width="30" height="30" class="img-fluid float-left">LOGIN</a></li>
-
+                <li class="nav-item"><a class="nav-link" href="../BackEnd/login.php"><i class="fas fa-sign-in-alt fa-lg"></i> LOGIN</a></li>
             </ul>
         </div>
     </nav>
