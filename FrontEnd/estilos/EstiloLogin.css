@@ -1,0 +1,72 @@
+/* login BACKEND*/
+
+/*.login {
+    /* background-color: #dc3545;
+}*/
+
+.back-card {
+    margin-bottom: 20px;
+    border: none;
+}
+
+.box {
+    width: 500px;
+    padding: 40px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    text-align: center;
+    transition: 0.25s;
+    margin-top: 100px;
+    border-radius: 24px;
+    border: 2px solid #388F53;
+    background-color: white;
+}
+
+.box input[type="text"], .box input[type="password"] {
+    border: 0;
+    background: none;
+    display: block;
+    margin: 20px auto;
+    text-align: center;
+    border: 2px solid black;
+    padding: 10px 10px;
+    width: 250px;
+    outline: none;
+    border-radius: 24px;
+    transition: 0.25s
+}
+
+.box h2 {
+    text-transform: uppercase;
+    font-weight: 500
+}
+
+.box input[type="text"]:focus, .box input[type="password"]:focus {
+    width: 300px;
+    border-color: #388F53;
+}
+
+.box input[type="submit"] {
+    border: 0;
+    background: none;
+    display: block;
+    margin: 20px auto;
+    text-align: center;
+    /* border: 2px solid black; */
+    padding: 14px 40px;
+    outline: none;
+    border-radius: 24px;
+    transition: 0.25s;
+    cursor: pointer
+}
+
+.box input[type="submit"]:hover {
+    background: #388F53;
+    color: white;
+}
+
+.forgot {
+    text-decoration: underline;
+    color: grey;
+}
