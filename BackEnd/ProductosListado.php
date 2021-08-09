@@ -52,8 +52,8 @@ if (isset($_GET['del'])) {
                         <td><?php echo $producto->getIDProducto() ?></td>
                         <td><?php echo $producto->getNombre() ?></td>
                         <td>
-                          <a href="ProductosForm.php?edit=<?php echo $producto->getIDProducto() ?>">EDITAR |<i class="fas fa-th"></i></a>
-                          <a href="ProductosListado.php?del=<?php echo $producto->getIDProducto() ?>">ELIMINAR<i class="fas fa-trash"></i></a>
+                          <a href="ProductosForm.php?edit=<?php echo $producto->getIDProducto() ?>">EDITAR <i class="fas fa-pen-square"></i> | </a>
+                          <a href="ProductosListado.php?del=<?php echo $producto->getIDProducto() ?>">ELIMINAR <i class="fas fa-trash"></i></a>
                         </td>
                       </tr>
                     <?php } ?>
@@ -76,9 +76,3 @@ if (isset($_GET['del'])) {
   <!-- /.content -->
 </div>
 <!-- /.content-wrapper -->
-
-<?php
-
-include('footer.php');
-
-?>
