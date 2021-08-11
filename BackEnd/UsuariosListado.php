@@ -2,9 +2,12 @@
 
 include('header.php');
 
+
+
+
 if (isset($_GET['del'])) {
-  $bProduct->deleteProducto($_GET['del']);
-  //redirect('ProductosListado.php');
+  $bUser->deleteUser($_GET['del']);
+  //redirect('UsuariosListado.php');
 }
 ?>
 
@@ -18,12 +21,13 @@ if (isset($_GET['del'])) {
     <!-- Default box -->
     <div class="card">
       <div class="card-header">
-        <h3 class="card-title">Productos
-          <!-- <a href="ProductosForm.php"><i class="fas fa-plus"></i>
+        <h3 class="card-title">Usuarios
+          <!-- <a href="UsuariosForm.php">
+            <i class="fas fa-plus"></i>
           </a> -->
         </h3>
         <div class="card-tools">
-          <a class="btn btn-success" href="ProductosForm.php">Agregar producto</a>
+          <a class="btn btn-success" href="UsuariosForm.php">Agregar usuario</a>
           <!-- <button type="button" class="btn btn-tool" data-card-widget="collapse" title="Collapse">
             <i class="fas fa-minus"></i>
           </button>
@@ -42,18 +46,24 @@ if (isset($_GET['del'])) {
                   <thead>
                     <tr>
                       <th>ID</th>
-                      <th>Nombre</th>
+                      <!-- <th>Nombre</th> -->
+                      <th>User</th>
+                      <th>Perfiles</th>
                       <th>Acciones</th>
                     </tr>
                   </thead>
                   <tbody>
-                    <?php foreach ($bProduct->getProductos() as $producto) { ?>
+                    <?php foreach ($bUser->getUsers() as $user) { ?>
                       <tr>
-                        <td><?php echo $producto->getIDProducto() ?></td>
-                        <td><?php echo $producto->getNombre() ?></td>
+                        <td><?php echo $user->getIDUsuario() ?></td>
+                        <!-- <td><?php echo $user->getNombre()  ?></td> -->
+                        <td><?php echo $user->getUsuario()  ?></td>
+                        <td><?php echo implode(', ', array_map(function ($p) {
+                              return $p->getNombre();
+                            }, $user->getPerfiles()))  ?></td>
                         <td>
-                          <a href="ProductosForm.php?edit=<?php echo $producto->getIDProducto() ?>">EDITAR |<i class="fas fa-th"></i></a>
-                          <a href="ProductosListado.php?del=<?php echo $producto->getIDProducto() ?>">ELIMINAR<i class="fas fa-trash"></i></a>
+                          <a href="UsuariosForm.php?edit=<?php echo $user->getIDUsuario() ?>">EDITAR <i class="fas fa-pen-square"></i> | </a>
+                          <a href="UsuariosListado.php?del=<?php echo $user->getIDUsuario() ?>">ELIMINAR <i class="fas fa-trash"></i></a>
                         </td>
                       </tr>
                     <?php } ?>
@@ -76,9 +86,3 @@ if (isset($_GET['del'])) {
   <!-- /.content -->
 </div>
 <!-- /.content-wrapper -->
-
-<?php
-
-include('footer.php');
-
-?>

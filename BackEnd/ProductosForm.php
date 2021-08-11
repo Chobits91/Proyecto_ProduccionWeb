@@ -116,6 +116,3 @@ $producto = $bProduct->getProducto($id);
   <!-- /.content -->
 </div>
 <!-- /.content-wrapper -->
-<?php
-//include('footer.php'); 
-?>

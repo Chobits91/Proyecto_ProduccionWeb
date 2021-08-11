@@ -43,8 +43,10 @@ if (isset($_GET['logout'])) {
 
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-        <link rel="stylesheet" href="lib/bootstrap/css/bootstrap.min.css">
-        <link rel="stylesheet" href="estilos/estilos.css">
+        <link rel="stylesheet" href="../FrontEnd/lib/bootstrap/css/bootstrap.min.css">
+        <link rel="stylesheet" href="../FrontEnd/estilos/estilos.css">
+        <!-- Estilo Login -->
+        <link rel="stylesheet" href="../FrontEnd/estilos/EstiloLogin.css">
         <!-- Font Awesome -->
         <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.7/css/all.css">
         <!--fuentes-->
@@ -61,10 +63,14 @@ if (isset($_GET['logout'])) {
         </button>
         <div class="collapse navbar-collapse" id="navbarNav">
             <ul class="navbar-nav">
-                <li class="nav-item"><a class="nav-link" href="index.php"><img src="imagenes/iconos/iconologo30.jpg" alt="Icono logo" width="30" height="30" class="img-fluid rounded-circle float-left">GAMESTORE</a></li>
-                <li class="nav-item"><a class="nav-link" href="listadoproductos.php"><img src="imagenes/iconos/iconocatalogo30.png" alt="Icono catálogo 30" width="30" height="30" class="img-fluid float-left">CATÁLOGO</a></li>
-                <li class="nav-item"><a class="nav-link" href="contacto.php"><img src="imagenes/iconos/iconocontacto30.png" alt="Icono contacto 30" width="30" height="30" class="img-fluid float-left">CONTACTO</a></li>
-                <li class="nav-item"><a class="nav-link" href="../BackEnd/login.php"><i class="fas fa-sign-in-alt fa-lg"></i> LOGIN</a></li>
+                <li class="nav-item"><a class="nav-link" href="../FrontEnd/index.php"><img src="../FrontEnd/imagenes/iconos/iconologo30.jpg" alt="Icono logo" width="30" height="30" class="img-fluid rounded-circle float-left">GAMESTORE</a></li>
+                <li class="nav-item"><a class="nav-link" href="UsuariosListado.php"><i class="fas fa-users fa-lg"></i> USUARIOS</a></li>
+                <li class="nav-item"><a class="nav-link" href="PerfilesListado.php"><i class="fas fa-id-badge fa-lg"></i> PERFILES</a></li>
+                <li class="nav-item"><a class="nav-link" href="ComentariosListado.php"><i class="fas fa-comment fa-lg"></i> COMENTARIOS</a></li>
+                <li class="nav-item"><a class="nav-link" href="ProductosListado.php"><i class="fab fa-product-hunt fa-lg"></i> PRODUCTOS</a></li>
+                <li class="nav-item"><a class="nav-link" href="CategoriasListado.php"><i class="fas fa-copyright fa-lg"></i> CATEGORÍAS</a></li>
+                <li class="nav-item"><a class="nav-link" href="DesarrolladorListado.php"><i class="fas fa-code fa-lg"></i></i> DESARROLLADOR</a></li>
+                <li class="nav-item"><a class="nav-link" href="login.php"><i class="fas fa-sign-out-alt fa-lg"></i></i></i> LOGOUT</a></li>
             </ul>
         </div>
     </nav>
