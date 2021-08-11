@@ -13,19 +13,33 @@
 
         }
 
-        public function getPlataforma() {
+        
+        public function getPlataforma($id_plataforma) {
 
-            $plataforma = $this->PlataformaDao->getAll();
-           /* echo '<pre>'; var_dump($productos);echo '</pre>'; */
+            $plataforma = $this->PlataformaDao->getOne($id_plataforma);
             return $plataforma;
-
         }
+        
         public function getPlataformas() {
 
-            $product = $this->PlataformaDao->getAll();
-           /* echo '<pre>'; var_dump($productos);echo '</pre>'; */
-            return $product;
+            $plataformas = $this->PlataformaDao->getAll();
+            return $plataformas;
 
+        }
+
+        public function savePlataforma($datos)
+        {
+            $this->PlataformaDao->save($datos);
+        }
+    
+        public function modifyPlataforma($id, $datos)
+        {
+            $this->PlataformaDao->modify($id, $datos);
+        }
+    
+        public function deletePlataforma($id)
+        {
+            $this->PlataformaDao->delete($id);
         }
 
     }

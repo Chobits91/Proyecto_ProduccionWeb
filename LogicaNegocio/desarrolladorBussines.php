@@ -29,4 +29,19 @@
 
         }
 
+        public function saveDesarrollador($datos)
+        {
+            $this->PlataformaDao->save($datos);
+        }
+    
+        public function modifyDesarrollador($id, $datos)
+        {
+            $this->PlataformaDao->modify($id, $datos);
+        }
+    
+        public function deleteDesarrollador($id)
+        {
+            $this->PlataformaDao->delete($id);
+        }
+
     }

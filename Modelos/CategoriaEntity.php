@@ -47,7 +47,7 @@ class CategoriaEntity extends BaseEntity
         $this->nombre = $nombre;
     }
 
-    public function poseeCategoria($id_producto)
+  /*   public function poseeCategoria($id_producto)
     {
         foreach ($this->getCategorias() as $categoria) {
             if ($categoria->getIDCategoria() == $id_producto) {
@@ -55,5 +55,5 @@ class CategoriaEntity extends BaseEntity
             }
         }
         return false;
-    }
+    } */
 }

@@ -34,7 +34,7 @@ class desarrolladorEntity extends BaseEntity
         $this->desarrolladores = $desarrolladores;
     }
 
-    public function poseeDesarrollador($id_producto)
+  /*   public function poseeDesarrollador($id_producto)
     {
         foreach ($this->getDesarrolladores() as $desarrollador) {
             if ($desarrollador->getIDDesarrollador() == $id_producto) {
@@ -42,6 +42,6 @@ class desarrolladorEntity extends BaseEntity
             }
         }
         return false;
-    }
+    } */
 
 }

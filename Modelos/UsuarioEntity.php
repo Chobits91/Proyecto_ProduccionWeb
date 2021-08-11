@@ -67,14 +67,14 @@ class UsuarioEntity extends BaseEntity
         $this->perfiles = $perfiles;
     }
 
-    public function poseePerfil($id_usuario){
+  /*   public function poseePerfil($id_usuario){
         foreach($this->getPerfiles() as $perfil){
             if($perfil->getIDPerfil() == $id_usuario){
                 return true;
             }
         }
         return false;
-    }
+    } */
 
 }
 

@@ -9,7 +9,6 @@ class PlataformaEntity extends BaseEntity
 
     function __construct()
     {
-
         parent::__construct();
     }
 
@@ -21,7 +20,14 @@ class PlataformaEntity extends BaseEntity
 
     public function getPlataformas()
     {
-        return $this->plataformas;
+        return $this->plataforma;
+    }
+
+
+    public function getNombre()
+    {
+
+        return $this->nombre;
     }
 
     public function setIDPlataforma($id_plataforma)
@@ -30,18 +36,25 @@ class PlataformaEntity extends BaseEntity
         $this->id_plataforma = $id_plataforma;
     }
 
-    public function setPlataformas($plataformas)
+    public function setPlataformas($plataforma)
     {
-        $this->plataformas = $plataformas;
+        $this->plataforma = $plataforma;
     }
 
-    public function poseePlataforma($id_producto)
+    public function setNombre($nombre)
     {
-        foreach ($this->getPlataformas() as $plataforma) {
+
+        $this->nombre = $nombre;
+    }
+
+   /*  public function poseePlataforma($id_producto)
+    {
+        foreach ($this->getPlataforma() as $plataforma) {
             if ($plataforma->getIDPlataforma() == $id_producto) {
                 return true;
             }
         }
         return false;
-    }
+    } */
 }
+
