@@ -1,17 +1,20 @@
 <?php
+session_start();
 error_reporting(E_ALL);
 ini_set("display_errors", 1);
-session_start();
+
+include('../Helpers/conecction.php');
+include_once('../LogicaNegocio/loginBussines.php');
+include_once('../LogicaNegocio/userBussines.php');
 include_once('../LogicaNegocio/gamesBussines.php');
 include_once('../LogicaNegocio/categoriaBussines.php');
 include_once('../LogicaNegocio/plataformaBussines.php');
-include_once('../LogicaNegocio/loginBussines.php');
 include_once('../LogicaNegocio/perfilBussines.php');
-include_once('../LogicaNegocio/userBussines.php');
 include_once('../LogicaNegocio/desarrolladorBussines.php');
 include_once('../Funciones/funciones.php');
-include('../Helpers/conecction.php');
-$loginB = new loginBussines($con);
+
+
+$bLogin = new loginBussines($con);
 $bUser = new userBussines($con);
 $bPerfil = new perfilBusiness($con);
 $bProduct = new gamesBussines($con);
@@ -19,22 +22,17 @@ $bCategory = new categoriaBussines($con);
 $bPlataforma = new plataformaBussines($con);
 $bDesarrollador = new desarrolladorBussines($con);
 
+// if (isset($_POST['login'])) {
+//     $bLogin->login($_POST);
+// }
 
-if (isset($_POST['login'])) {
-    if (!$loginB->login($_POST)) {
-        header('login.php?errAth');
-        die();
-    }
-}
+// if (isset($_GET['logout'])) {
+//     $bLogin->logout();
+// }
 
-if (isset($_GET['logout'])) {
-    $loginB->logout();
-}
-/*  if(!$loginB->isLoged())
-    {
-        header('login.php');   
-        die();
-    } */
+// if (!$bLogin->isLog()) {
+//     
+// }
 ?>
 
 <header>

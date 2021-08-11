@@ -1,17 +1,18 @@
 <?php
+session_start();
 error_reporting(E_ALL);
 ini_set("display_errors", 1);
-session_start();
+
+include('../Helpers/conecction.php');
+include_once('../LogicaNegocio/loginBussines.php');
+include_once('../LogicaNegocio/userBussines.php');
+include_once('../LogicaNegocio/perfilBussines.php');
 include_once('../LogicaNegocio/gamesBussines.php');
 include_once('../LogicaNegocio/categoriaBussines.php');
 include_once('../LogicaNegocio/plataformaBussines.php');
-include_once('../LogicaNegocio/loginBussines.php');
-include_once('../LogicaNegocio/perfilBussines.php');
-include_once('../LogicaNegocio/userBussines.php');
 include_once('../LogicaNegocio/desarrolladorBussines.php');
 include_once('../Funciones/funciones.php');
-include('../Helpers/conecction.php');
-$loginB = new loginBussines($con);
+$bLogin = new loginBussines($con);
 $bUser = new userBussines($con);
 $bPerfil = new perfilBusiness($con);
 $bProduct = new gamesBussines($con);
@@ -19,22 +20,15 @@ $bCategory = new categoriaBussines($con);
 $bPlataforma = new plataformaBussines($con);
 $bDesarrollador = new desarrolladorBussines($con);
 
-
 if (isset($_POST['login'])) {
-    if (!$loginB->login($_POST)) {
-        header('login.php?errAth');
-        die();
-    }
+    $bLogin->login($_POST);
 }
-
 if (isset($_GET['logout'])) {
-    $loginB->logout();
+    $bLogin->logout();
 }
-/*  if(!$loginB->isLoged())
-    {
-        header('login.php');   
-        die();
-    } */
+if (!$bLogin->isLog()) {
+    //header('Location:login.php');
+}
 ?>
 
 <header>
@@ -66,9 +60,10 @@ if (isset($_GET['logout'])) {
                 <li class="nav-item"><a class="nav-link" href="../FrontEnd/index.php"><img src="../FrontEnd/imagenes/iconos/iconologo30.jpg" alt="Icono logo" width="30" height="30" class="img-fluid rounded-circle float-left">GAMESTORE</a></li>
                 <li class="nav-item"><a class="nav-link" href="UsuariosListado.php"><i class="fas fa-users fa-lg"></i> USUARIOS</a></li>
                 <li class="nav-item"><a class="nav-link" href="PerfilesListado.php"><i class="fas fa-id-badge fa-lg"></i> PERFILES</a></li>
-                <li class="nav-item"><a class="nav-link" href="ComentariosListado.php"><i class="fas fa-comment fa-lg"></i> COMENTARIOS</a></li>
+                <!-- <li class="nav-item"><a class="nav-link" href="ComentariosListado.php"><i class="fas fa-comment fa-lg"></i> COMENTARIOS</a></li> -->
                 <li class="nav-item"><a class="nav-link" href="ProductosListado.php"><i class="fab fa-product-hunt fa-lg"></i> PRODUCTOS</a></li>
                 <li class="nav-item"><a class="nav-link" href="CategoriasListado.php"><i class="fas fa-copyright fa-lg"></i> CATEGORÍAS</a></li>
+                <li class="nav-item"><a class="nav-link" href="PlataformasListado.php"><i class="fab fa-product-hunt fa-lg"></i> PLATAFORMAS</a></li>
                 <li class="nav-item"><a class="nav-link" href="DesarrolladorListado.php"><i class="fas fa-code fa-lg"></i></i> DESARROLLADOR</a></li>
                 <li class="nav-item"><a class="nav-link" href="login.php"><i class="fas fa-sign-out-alt fa-lg"></i></i></i> LOGOUT</a></li>
             </ul>

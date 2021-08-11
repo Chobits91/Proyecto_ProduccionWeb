@@ -1,4 +1,2 @@
-<?php
-require_once "header.php";
-?>
-¡Bienvenido, <?php //$bUser->getUser; ?>!
+¡Bienvenido, <?php //$bUser->getUser; 
+                ?>!
