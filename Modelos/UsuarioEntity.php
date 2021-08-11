@@ -1,38 +1,38 @@
 
-<?php 
+<?php
 
 require_once('BaseEntity.php');
 
-class UsuarioEntity extends BaseEntity 
+class UsuarioEntity extends BaseEntity
 {
     protected $id_usuario;
     protected $mail;
     protected $usuario;
     protected $pass;
     private $perfiles;
-    
-    public function __construct() 
+
+    public function __construct()
     {
         parent::__construct();
         $this->perfiles = array();
     }
 
-    public function getIDUsuario() 
+    public function getIDUsuario()
     {
         return $this->id_usuario;
     }
 
-    public function getMail() 
+    public function getMail()
     {
         return $this->mail;
     }
 
-    public function getUsuario() 
+    public function getUsuario()
     {
         return $this->usuario;
     }
 
-    public function getPass() 
+    public function getPass()
     {
         return $this->pass;
     }
@@ -47,19 +47,19 @@ class UsuarioEntity extends BaseEntity
         $this->id_usuario = $id_usuario;
     }
 
-    public function setmail($mail) 
+    public function setmail($mail)
     {
-         $this->mail = $mail;
+        $this->mail = $mail;
     }
 
-    public function setusuario($usuario) 
+    public function setusuario($usuario)
     {
-         $this->usuario = $usuario;
+        $this->usuario = $usuario;
     }
 
-    public function setpass($pass) 
+    public function setpass($pass)
     {
-         $this->pass = $pass;
+        $this->pass = $pass;
     }
 
     public function setPerfiles($perfiles)
@@ -67,15 +67,15 @@ class UsuarioEntity extends BaseEntity
         $this->perfiles = $perfiles;
     }
 
-  /*   public function poseePerfil($id_usuario){
-        foreach($this->getPerfiles() as $perfil){
-            if($perfil->getIDPerfil() == $id_usuario){
+    public function poseePerfil($id_usuario)
+    {
+        foreach ($this->getPerfiles() as $perfil) {
+            if ($perfil->getIDPerfil() == $id_usuario) {
                 return true;
             }
         }
         return false;
-    } */
-
+    }
 }
 
 ?>
