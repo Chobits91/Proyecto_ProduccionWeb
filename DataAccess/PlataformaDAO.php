@@ -14,7 +14,6 @@
 
         public function getOne($id) {
         
-            
             try{
                 $sql = "SELECT id_plataforma, nombre FROM $this->table WHERE id_plataforma = $id";
                 $resultado = $this->con->query($sql,PDO::FETCH_CLASS,'PlataformaEntity')->fetch();
